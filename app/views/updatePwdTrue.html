@@ -1,0 +1,40 @@
+<div ng-controller="qurenUpdatePwdController">
+	<form ng-submit="check()">
+		<div class="form-label">
+			<label for="">密码必须8个字符，而且同时包含字母和数字。</label>
+		</div>
+		<div class="form-control">
+			<div class="wrap">
+				<label for="">旧密码</label>
+				<input type="text" placeholder="请填写旧密码" ng-model="oldpwd" />
+			</div>
+		</div>
+		<div class="form-control">
+			<div class="wrap">
+				<label for="">新密码</label>
+				<input type="text" placeholder="请输入新的密码" ng-model="newpwd"/>
+			</div>
+		</div>
+		<div class="form-control">
+			<div class="wrap" style="border-bottom:0">
+				<label for="">确认密码</label>
+				<input type="text" placeholder="请再次输入新的密码" value="" ng-model="renpwd" />
+			</div>
+		</div>
+		<div class="form-btn">
+			<input type="submit" value="确认" class="btn queren" />
+		</div>
+	</form>
+	<!--弹框-->
+	<div class="bg hide-animation" ng-show="isShow">
+		<div class="up_alert">
+			<div>
+				<font class="icon iconfont icon-chenggongicon"></font>
+			</div>
+			<p class="msg">密码修改成功 !</p>
+			<input type="button" value="完成" class="btn finish" ng-click="finsh()"/>
+		</div>
+	</div>
+	<my-alert save="{{watch}}"></my-alert>
+</div>
+	

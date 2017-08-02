@@ -1,0 +1,39 @@
+<div ng-controller="formUpPhoneController">
+	<form ng-submit="tree()">
+		<div class="form-label">
+			<label for="">更换手机号后，下次登录可使用新手机号登录。<br />当前手机号:186****7657</label>
+		</div>
+		<div class="form-control">
+			<div class="wrap">
+				<label for="">手机号</label>
+				<input type="number" placeholder="请填新的手机号码" ng-model="phone"/>
+			</div>
+		</div>
+		<div class="form-control">
+			<div class="wrap" style="border-bottom:0">
+				<label for="">验证码</label>
+				<input type="text" placeholder="输入短信验证码" ng-model="code"/>
+				<div class="send">
+					<span>
+						获取验证码
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="form-btn">
+			<input type="submit" value="确认" class="btn queren"/>
+		</div>
+	</form>
+	
+	<!--弹框-->
+	<div class="bg hide-animation" ng-show="isShow_Phone">
+		<div class="up_alert">
+			<div>
+				<font class="icon iconfont icon-chenggongicon"></font>
+			</div>
+			<p class="msg">手机号修改成功 !</p>
+			<input type="button" value="完成" class="btn finish" ng-click="phone_finsh()"/>
+		</div>
+	</div>
+	<my-alert save="{{watch}}"></my-alert>
+</div>

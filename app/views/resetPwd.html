@@ -1,0 +1,52 @@
+<div ng-controller="resetPwdController">
+	<form ng-submit="resetPwd()">
+		<div class="form-label">
+			<label for="">密码必须8个字符，而且同时包含字母和数字。</label>
+		</div>
+		<div class="form-control">
+			<div class="wrap">
+				<label for="">手机号</label>
+				<input type="text" placeholder="输入手机号" ng-model="reset_phone"/>
+			</div>
+		</div>
+		<div class="form-control">
+			<div class="wrap">
+				<label for="">验证码</label>
+				<input type="text" placeholder="输入手机验证码" ng-model="reset_code"/>
+				<div class="send">
+					<span>
+						获取验证码
+					</span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="form-control">
+			<div class="wrap">
+				<label for="">新的密码</label>
+				<input type="text" placeholder="输入八位新的密码" value="" ng-model="reset_pwds"/>
+			</div>
+		</div>
+		<div class="form-control">
+			<div class="wrap" style="border-bottom:0">
+				<label for="">确认密码</label>
+				<input type="text" placeholder="请再次输入八位新的密码" value="" ng-model="reset_rpwd"/>
+			</div>
+		</div>
+		<div class="form-btn">
+			<input type="submit" value="确定" class="btn queren" />
+		</div>
+	</form>
+	
+	<!--弹框-->
+	<div class="bg hide-animation" ng-show="reset_pwd">
+		<div class="up_alert">
+			<div>
+				<font class="icon iconfont icon-chenggongicon"></font>
+			</div>
+			<p class="msg">修改成功 !</p>
+			<input type="button" value="完成" class="btn finish" ng-click="reset_finsh()"/>
+		</div>
+	</div>
+	<my-alert save="{{watch}}"></my-alert>
+</div>

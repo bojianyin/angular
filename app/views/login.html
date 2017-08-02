@@ -1,0 +1,33 @@
+<div class="use_login" ng-controller="useLoginController">
+	<div class="logo">
+		<img src="../images/logo.png" alt="" />
+	</div>
+	<div class="denlu">
+		<div class="men">
+			<label for="">账号</label>
+			<input type="number" class="hao" placeholder="请输入您的手机号" ng-model="phone"/>
+		</div>
+		<div class="pwd">
+			<label for="">密码</label>
+			<input type="text" class="pass" placeholder="请输入您的登录密码" ng-model="pwd"/>
+		</div>
+		<div class="handler clearfix">
+			<a ui-sref="form.register" class="fl">注册账号</a>
+			<a ui-sref="form.resetPwd" class="fr">忘记密码</a>
+		</div>
+		<div class="log">
+			<input type="button" class="login_btn" value="登录" ng-click="user_login()"/>
+		</div>
+	</div>
+	<!--弹框-->
+	<div class="bg hide-animation" ng-show="isShow">
+		<div class="up_alert">
+			<div>
+				<font class="icon iconfont icon-chenggongicon"></font>
+			</div>
+			<p class="msg">登录成功 !</p>
+			<input type="button" value="完成" class="btn finish" ng-click="loginsuccess()"/>
+		</div>
+	</div>
+	<my-alert save="{{watch}}"></my-alert>
+</div>

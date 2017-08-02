@@ -1,0 +1,26 @@
+<form ng-controller="updatePwdController" >
+		<div class="form-label">
+			<label for="">密码必须8个字符，而且同时包含字母和数字。</label>
+		</div>
+		<div class="form-control">
+			<div class="wrap">
+				<label for="" class="readOnly">手机号</label>
+				<input type="text" readonly="readonly" value="186****7357" class="readOnly"/>
+			</div>
+		</div>
+		<div class="form-control">
+			<div class="wrap" style="border-bottom:0">
+				<label for="">验证码</label>
+				<input type="text" placeholder="输入手机验证码" ng-model="code"/>
+				<div class="send">
+					<span>
+						获取验证码
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="form-btn">
+			<input type="submit" value="下一步" class="btn" ng-click="next()"/>
+		</div>
+		<my-alert save="{{watch}}"></my-alert>
+</form>
